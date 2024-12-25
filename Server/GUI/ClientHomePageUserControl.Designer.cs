@@ -103,7 +103,7 @@
             this.lblUsedTime.Name = "lblUsedTime";
             this.lblUsedTime.Size = new System.Drawing.Size(194, 34);
             this.lblUsedTime.TabIndex = 3;
-            this.lblUsedTime.Text = "00:00:00";
+            this.lblUsedTime.Text = "00:00";
             this.lblUsedTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblUsedTime.Click += new System.EventHandler(this.lblClientName_Click);
             // 

@@ -50,7 +50,7 @@
             this.lblClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientName.Location = new System.Drawing.Point(0, 0);
             this.lblClientName.Name = "lblClientName";
-            this.lblClientName.Size = new System.Drawing.Size(367, 56);
+            this.lblClientName.Size = new System.Drawing.Size(496, 56);
             this.lblClientName.TabIndex = 0;
             this.lblClientName.Text = "MAY1";
             this.lblClientName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,7 +60,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(223, 84);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(83, 20);
+            this.lblUsername.Size = new System.Drawing.Size(124, 29);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Username";
             // 
@@ -70,7 +70,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.Size = new System.Drawing.Size(115, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Hội viên:";
             // 
@@ -80,7 +80,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 20);
+            this.label2.Size = new System.Drawing.Size(229, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Thời gian sử dụng:";
             // 
@@ -90,7 +90,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(131, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tổng tiền:";
             // 
@@ -99,7 +99,7 @@
             this.lblTotalMoney.AutoSize = true;
             this.lblTotalMoney.Location = new System.Drawing.Point(223, 130);
             this.lblTotalMoney.Name = "lblTotalMoney";
-            this.lblTotalMoney.Size = new System.Drawing.Size(87, 20);
+            this.lblTotalMoney.Size = new System.Drawing.Size(130, 29);
             this.lblTotalMoney.TabIndex = 5;
             this.lblTotalMoney.Text = "totalMoney";
             // 
@@ -108,7 +108,7 @@
             this.lblUsedTime.AutoSize = true;
             this.lblUsedTime.Location = new System.Drawing.Point(223, 176);
             this.lblUsedTime.Name = "lblUsedTime";
-            this.lblUsedTime.Size = new System.Drawing.Size(85, 20);
+            this.lblUsedTime.Size = new System.Drawing.Size(132, 29);
             this.lblUsedTime.TabIndex = 6;
             this.lblUsedTime.Text = "Used Time";
             // 
@@ -144,13 +144,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 56);
+            this.panel1.Size = new System.Drawing.Size(496, 56);
             this.panel1.TabIndex = 10;
             // 
             // ClientDetailForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(367, 351);
+            this.ClientSize = new System.Drawing.Size(496, 404);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);

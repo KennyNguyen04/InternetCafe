@@ -59,7 +59,9 @@ namespace Client
             lockScreen.Show();
 
         }
-        
+        public TimeSpan usedTime { get; set; }
+
+
         public void ReceiveDataFromSever()
         {
 
@@ -72,6 +74,22 @@ namespace Client
                     client.Receive(messageFromClient);
                     string msg = CovertToMessage(messageFromClient).ToString();
                     List<string> lstMessage = msg.Split('|').ToList();
+
+                    if (lstMessage[request].Equals("UpdateMoney"))
+                    {
+                        this.userName = lstMessage[1];
+                        this.totalMoney = double.Parse(lstMessage[2]);
+
+                        // Nếu server gửi cả hh:mm:ss, chỉ lấy hh:mm
+                        string time = lstMessage[3].Split(':')[0] + ":" + lstMessage[3].Split(':')[1];
+                        this.usedTime = TimeSpan.ParseExact(time, @"hh\:mm", null);
+
+                        // Cập nhật giao diện với thời gian đã sử dụng
+                        // Cập nhật chi phí nếu cần
+                    }
+
+
+
                     if (lstMessage[request].Equals("OkePlayGo"))
                     {
                         this.userName = lstMessage[1];
@@ -84,7 +102,8 @@ namespace Client
                     if (lstMessage[request].Equals("Account not exist !! Or Wrong Username, Password"))
                     {
                         message = "Login wrong";
-                    }
+                    }                  
+
                     if (lstMessage[request].Equals("Your account is exhausted.Recharge to use it!!!"))
                     {
                         lockScreen.Visible = true;
@@ -116,6 +135,9 @@ namespace Client
                     {
                         requestServer = LOGOUT;
                     }
+
+                   
+
                     if (lstMessage[request].Equals("Server send message"))
                     {
                         recieveMessage = lstMessage[1];
@@ -180,10 +202,26 @@ namespace Client
         {
             client.Send(ConvertToByte("LogOutPls!!|" + userName + "|"));
         }
+
+        public double CalculateCost(TimeSpan timeUsed)
+        {
+            // Tính phí theo phút
+            double costPerMinute = clientPrice / 60; // Chi phí mỗi phút
+            double totalCost = costPerMinute * timeUsed.TotalMinutes;
+            return totalCost;
+        }
+
         public void updateMoney(string userName, double totalMoney, TimeSpan usedTime)
         {
-            client.Send(ConvertToByte("UpdateMoney|" + userName + "|" + totalMoney.ToString() + "|" + usedTime + "|"));
+            double cost = CalculateCost(usedTime); // Tính phí sử dụng
+            totalMoney -= cost; // Trừ phí sử dụng từ tổng số tiền
+
+            // Gửi thông tin cập nhật tiền và thời gian đã sử dụng lên server
+            string formattedUsedTime = usedTime.ToString(@"hh\:mm");
+            client.Send(ConvertToByte($"UpdateMoney|{userName}|{totalMoney}|{formattedUsedTime}|"));
         }
+
+
         public void showInfo(string userName)
         {
             client.Send(ConvertToByte("ShowInfo|" + userName + "|"));

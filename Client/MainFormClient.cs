@@ -102,7 +102,7 @@ namespace Client
                         txtRemainingMoney.Text = currencyFormat(remainingMoney);
                         txtUseTimeFee.Text = "0";
                         clientManager.updateMoney(userName, Math.Round(remainingMoney, 0, MidpointRounding.AwayFromZero), use);
-                        txtServiceFee.Text = currencyFormat(ClientManager.serviceFee);
+                        //txtServiceFee.Text = currencyFormat(ClientManager.serviceFee);
                     }
                     else if(ClientManager.checkAddMoney == 1)
                     {
@@ -118,7 +118,7 @@ namespace Client
                         timerProgram.Start();
                         txtCurrentMoney.Clear();
                         txtRemainingMoney.Clear();
-                        txtServiceFee.Clear();
+                        //txtServiceFee.Clear();
                         txtUsedTime.Clear();
                         txtUseTimeFee.Clear();
                         grbUser.Text = "Username";
@@ -131,7 +131,7 @@ namespace Client
                         timerProgram.Start();
                         txtCurrentMoney.Clear();
                         txtRemainingMoney.Clear();
-                        txtServiceFee.Clear();
+                        //txtServiceFee.Clear();
                         txtUsedTime.Clear();
                         txtUseTimeFee.Clear();
                         grbUser.Text = "Username";
@@ -151,43 +151,44 @@ namespace Client
             hour = 0;
             money = 0;
         }
-        
-        private void MoneyCount(String useTime)
+
+        private void MoneyCount(string useTime)
         {
-            int time = ChangeUseTimeToMinutes(useTime);
+            // Chuyển đổi thời gian sử dụng sang phút
+            TimeSpan timeUsed = TimeSpan.ParseExact(useTime, @"hh\:mm", CultureInfo.InvariantCulture);
+            double minutesUsed = timeUsed.TotalMinutes;
+
+            // Tính phí sử dụng dựa trên số phút đã sử dụng
+            money = (clientManager.clientPrice / 60) * minutesUsed;
+
+            // Cập nhật giá trị vào giao diện người dùng
             txtUseTimeFee.Text = currencyFormat(money);
-            money += clientManager.clientPrice / 3600;
         }
-        private int ChangeUseTimeToMinutes(String useTime)
+
+
+        private int ChangeUseTimeToMinutes(string useTime)
         {
-            int minutes = 0;
-            string[] arrListStr = useTime.Split(':');
-            if (int.Parse(arrListStr[1]) > 0)
-            {
-                minutes = minutes + int.Parse(arrListStr[1]);
-            }
-
-            if (int.Parse(arrListStr[0]) > 0)
-            {
-                minutes = minutes + int.Parse(arrListStr[0]) * 60;
-            }
-
-            return minutes;
+            TimeSpan timeUsed = TimeSpan.ParseExact(useTime, @"hh\:mm", CultureInfo.InvariantCulture);
+            return (int)timeUsed.TotalMinutes;
         }
+
         private void TimeCount()
         {
-            txtUsedTime.Text = hour.ToString("D2") + ":" + min.ToString("D2") + ":" + sec.ToString("D2");
+            // Cập nhật giao diện hiển thị thời gian
+            txtUsedTime.Text = hour.ToString("D2") + ":" + min.ToString("D2");
+
             sec++;
+
             if (sec > 59)
             {
                 min++;
-                sec = 00;
+                sec = 0;
             }
 
             if (min > 59)
             {
                 hour++;
-                min = 00;
+                min = 0;
             }
 
             if (hour > 99)
@@ -196,7 +197,10 @@ namespace Client
                 timerProgram.Enabled = true;
             }
 
+            // Tính chi phí sau mỗi giây, phút, giờ
+            MoneyCount(txtUsedTime.Text.ToString());
         }
+
 
         private void pnlLogout_Click(object sender, EventArgs e)
         {
@@ -210,16 +214,28 @@ namespace Client
                 timerProgram.Start();
                 txtCurrentMoney.Clear();
                 txtRemainingMoney.Clear();
-                txtServiceFee.Clear();
+                //txtServiceFee.Clear();
                 txtUsedTime.Clear();
                 txtUseTimeFee.Clear();
                 grbUser.Text = "Username";
                 ClientManager.requestServer = -1;
                 clientManager.LogoutMember(userName);
             }
-    }
-        private string currencyFormat(double money) => string.Format(new CultureInfo("vi-VN"), "{0:C}", money);
-        
+        }
+
+        private double RoundToThousand(double value)
+        {
+            return Math.Floor(value / 1000) * 1000;
+        }
+
+        private string currencyFormat(double money)
+        {
+            double roundedMoney = RoundToThousand(money);
+            return string.Format(new CultureInfo("en-US"), "{0:N0}", roundedMoney); // Định dạng với dấu phân cách hàng nghìn
+        }
+
+
+
 
         private void chat_Click(object sender, EventArgs e)
         {
@@ -251,6 +267,21 @@ namespace Client
         {
             ChangePasswordForm changePasswordForm = new ChangePasswordForm(this, this.clientManager);
             changePasswordForm.ShowDialog();
+        }
+
+        private void txtCurrentMoney_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRemainingMoney_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

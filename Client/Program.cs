@@ -18,5 +18,6 @@ namespace Client
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ClientForm());
         }
+
     }
 }

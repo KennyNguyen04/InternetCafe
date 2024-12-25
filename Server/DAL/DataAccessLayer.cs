@@ -12,7 +12,7 @@ namespace Server.DAL
 
     internal class DataAccessLayer
     {
-        private string strconn = "Data Source=MSI\\SQLEXPRESS;Initial Catalog=QuanLyPhongMay;Integrated Security=True";
+        private string strconn = "Data Source=LAPTOP-4FBVN54I\\SQLEXPRESS;Initial Catalog=QuanLyPhongMay;Integrated Security=True";
         private SqlConnection conn;
         public bool TestConnection()
         {

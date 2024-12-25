@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1032, 58);
+            this.panel1.Size = new System.Drawing.Size(1028, 58);
             this.panel1.TabIndex = 0;
             // 
             // lblClose
@@ -82,7 +82,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1032, 58);
+            this.label1.Size = new System.Drawing.Size(1028, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thực đơn";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,14 +95,14 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 58);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(624, 458);
+            this.panel4.Size = new System.Drawing.Size(624, 546);
             this.panel4.TabIndex = 3;
             // 
             // pnlProductContainer
             // 
             this.pnlProductContainer.AutoScroll = true;
             this.pnlProductContainer.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pnlProductContainer.Location = new System.Drawing.Point(5, 102);
+            this.pnlProductContainer.Location = new System.Drawing.Point(3, 75);
             this.pnlProductContainer.Name = "pnlProductContainer";
             this.pnlProductContainer.Size = new System.Drawing.Size(590, 353);
             this.pnlProductContainer.TabIndex = 4;
@@ -111,9 +111,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 40);
+            this.label2.Location = new System.Drawing.Point(12, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 25);
+            this.label2.Size = new System.Drawing.Size(122, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Phân loại";
             // 
@@ -121,9 +121,9 @@
             // 
             this.cbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(110, 34);
+            this.cbCategory.Location = new System.Drawing.Point(140, 23);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(134, 33);
+            this.cbCategory.Size = new System.Drawing.Size(134, 37);
             this.cbCategory.TabIndex = 0;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -133,16 +133,16 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pnlCart);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(642, 58);
+            this.panel2.Location = new System.Drawing.Point(638, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 458);
+            this.panel2.Size = new System.Drawing.Size(390, 546);
             this.panel2.TabIndex = 4;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnOrder);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 399);
+            this.panel5.Location = new System.Drawing.Point(0, 487);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(390, 59);
             this.panel5.TabIndex = 2;
@@ -206,7 +206,7 @@
             // MenuForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1032, 516);
+            this.ClientSize = new System.Drawing.Size(1028, 604);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);

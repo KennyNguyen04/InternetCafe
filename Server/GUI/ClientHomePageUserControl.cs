@@ -45,9 +45,12 @@ namespace Server.GUI
             set
             {
                 info = value;
-                this.lblUsedTime.Text = info.usedTime.ToString();
+
+                // Sử dụng TimeSpan để hiển thị giờ và phút
+                this.lblUsedTime.Text = info.usedTime.ToString(@"hh\:mm");
             }
         }
+
         private void lblGroupClient_Click(object sender, EventArgs e)
         {
 
@@ -60,11 +63,20 @@ namespace Server.GUI
 
         private void lblStatus_TextChanged(object sender, EventArgs e)
         {
-            if(lblStatus.Text != "MEMBER USING")
+            if (lblStatus.Text != "MEMBER USING")
             {
-                lblUsedTime.Text = "00:00:00";
+                lblUsedTime.Text = "00:00";
+            }
+            else
+            {
+                // Cập nhật lại thời gian sử dụng khi trạng thái là "MEMBER USING"
+                if (info != null)
+                {
+                    lblUsedTime.Text = info.usedTime.ToString(@"hh\:mm");
+                }
             }
         }
+
 
         private void ClientHomePageUserControl_Click(object sender, EventArgs e)
         {            

@@ -37,21 +37,29 @@ namespace Server.GUI
             processMember = new ProcessMember();
             processClient = new ProcessClient();
             lblUsername.Text = infoClient.memberName;
-            lblUsedTime.Text = infoClient.usedTime.ToString();
+
+            // Định dạng usedTime theo hh:mm
+            lblUsedTime.Text = infoClient.usedTime.ToString(@"hh\:mm");
+
             double totalMoney = processMember.getTotalMoney(infoClient.memberName);
             lblTotalMoney.Text = currencyFormat(totalMoney);
             lblClientName.Text = processClient.getClientName(infoClient.clientIp);
-
         }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblUsername.Text = infoClient.memberName;
-            lblUsedTime.Text = infoClient.usedTime.ToString();
+
+            // Định dạng usedTime theo hh:mm
+            lblUsedTime.Text = infoClient.usedTime.ToString(@"hh\:mm");
+
             double totalMoney = processMember.getTotalMoney(infoClient.memberName);
             lblTotalMoney.Text = currencyFormat(totalMoney);
             lblClientName.Text = processClient.getClientName(infoClient.clientIp);
         }
+
+
         private string currencyFormat(double money) => string.Format(new CultureInfo("vi-VN"), "{0:C}", money);
 
         private void btnCloseClient_Click(object sender, EventArgs e)

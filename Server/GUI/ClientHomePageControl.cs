@@ -48,25 +48,35 @@ namespace Server.GUI
         public void loadTime()
         {
             clientList = ProcessClient.getAllClient();
+
             foreach (ClientHomePageUserControl control in pnlContainer.Controls)
             {
+                // Cập nhật thông tin cho mỗi control
                 foreach (InfoClient info in infoList)
                 {
                     if (info.clientIp == control.Client.ClientIP)
                     {
                         control.Info = info;
+
+                        // Cập nhật và hiển thị thời gian sử dụng theo định dạng hh:mm
+                        string formattedTime = info.usedTime.ToString(@"hh\:mm");
+                        // Giả sử bạn có TextBox hoặc một điều khiển nào đó để hiển thị thời gian
+                        //control.TimeUsage = formattedTime;  // Nếu có thuộc tính `TimeUsage` trong control
                     }
                 }
-                foreach(Client client in clientList)
+
+                // Cập nhật thông tin client cho mỗi control
+                foreach (Client client in clientList)
                 {
-                    if(client.ClientIP == control.Client.ClientIP)
+                    if (client.ClientIP == control.Client.ClientIP)
                     {
                         control.Client = client;
                     }
                 }
             }
         }
-        
+
+
         private void ClientHomePageControl_Load(object sender, EventArgs e)
         {
             loadClientData();
