@@ -56,22 +56,23 @@
             0,
             0,
             0});
-            this.txtMoney.Location = new System.Drawing.Point(163, 37);
+            this.txtMoney.Location = new System.Drawing.Point(212, 38);
             this.txtMoney.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(120, 26);
+            this.txtMoney.Size = new System.Drawing.Size(120, 30);
             this.txtMoney.TabIndex = 2;
+            this.txtMoney.ValueChanged += new System.EventHandler(this.txtMoney_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.Size = new System.Drawing.Size(148, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Số tiền cần nạp";
             // 

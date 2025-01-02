@@ -12,7 +12,9 @@ namespace Server.DAL
 
     internal class DataAccessLayer
     {
+
         private string strconn = "Data Source=DESKTOP-4G0NG1C;Initial Catalog=QuanLyPhongMay;Integrated Security=True";
+
         private SqlConnection conn;
         public bool TestConnection()
         {

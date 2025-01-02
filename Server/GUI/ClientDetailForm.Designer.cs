@@ -46,6 +46,7 @@
             // 
             // lblClientName
             // 
+            this.lblClientName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(208)))), ((int)(((byte)(44)))));
             this.lblClientName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientName.Location = new System.Drawing.Point(0, 0);
@@ -58,9 +59,9 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(223, 84);
+            this.lblUsername.Location = new System.Drawing.Point(316, 84);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(124, 29);
+            this.lblUsername.Size = new System.Drawing.Size(102, 25);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Username";
             // 
@@ -70,7 +71,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 29);
+            this.label1.Size = new System.Drawing.Size(97, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Hội viên:";
             // 
@@ -80,7 +81,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 29);
+            this.label2.Size = new System.Drawing.Size(192, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Thời gian sử dụng:";
             // 
@@ -90,25 +91,25 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 29);
+            this.label3.Size = new System.Drawing.Size(110, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tổng tiền:";
             // 
             // lblTotalMoney
             // 
             this.lblTotalMoney.AutoSize = true;
-            this.lblTotalMoney.Location = new System.Drawing.Point(223, 130);
+            this.lblTotalMoney.Location = new System.Drawing.Point(316, 130);
             this.lblTotalMoney.Name = "lblTotalMoney";
-            this.lblTotalMoney.Size = new System.Drawing.Size(130, 29);
+            this.lblTotalMoney.Size = new System.Drawing.Size(108, 25);
             this.lblTotalMoney.TabIndex = 5;
             this.lblTotalMoney.Text = "totalMoney";
             // 
             // lblUsedTime
             // 
             this.lblUsedTime.AutoSize = true;
-            this.lblUsedTime.Location = new System.Drawing.Point(223, 176);
+            this.lblUsedTime.Location = new System.Drawing.Point(317, 176);
             this.lblUsedTime.Name = "lblUsedTime";
-            this.lblUsedTime.Size = new System.Drawing.Size(132, 29);
+            this.lblUsedTime.Size = new System.Drawing.Size(107, 25);
             this.lblUsedTime.TabIndex = 6;
             this.lblUsedTime.Text = "Used Time";
             // 
@@ -124,7 +125,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(207, 278);
+            this.btnClose.Location = new System.Drawing.Point(299, 278);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(119, 41);
             this.btnClose.TabIndex = 9;
