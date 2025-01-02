@@ -44,7 +44,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(65, 276);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 31);
+            this.label1.Size = new System.Drawing.Size(213, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Admin Page";
             // 
@@ -54,7 +54,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(333, 276);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 31);
+            this.label2.Size = new System.Drawing.Size(206, 39);
             this.label2.TabIndex = 3;
             this.label2.Text = "Home Page";
             // 
@@ -89,7 +89,7 @@
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit.Location = new System.Drawing.Point(523, 9);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(33, 31);
+            this.exit.Size = new System.Drawing.Size(41, 39);
             this.exit.TabIndex = 4;
             this.exit.Text = "X";
             this.exit.Click += new System.EventHandler(this.exit_Click);

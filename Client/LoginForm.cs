@@ -95,6 +95,5 @@ namespace Client
                 MessageBox.Show("Số tiền trong tài khoản của bạn đã hết.\nVui lòng nạp thêm tiền để tiếp tục.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
     }
 }

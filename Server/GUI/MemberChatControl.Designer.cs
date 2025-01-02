@@ -71,11 +71,13 @@
             // 
             // lblMemberName
             // 
+            this.lblMemberName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(208)))), ((int)(((byte)(44)))));
+            this.lblMemberName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMemberName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblMemberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberName.Location = new System.Drawing.Point(0, 0);
             this.lblMemberName.Name = "lblMemberName";
-            this.lblMemberName.Size = new System.Drawing.Size(720, 40);
+            this.lblMemberName.Size = new System.Drawing.Size(720, 50);
             this.lblMemberName.TabIndex = 3;
             this.lblMemberName.Text = "membername";
             this.lblMemberName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
