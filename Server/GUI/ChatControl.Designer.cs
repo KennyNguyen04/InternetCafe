@@ -30,15 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlClient = new System.Windows.Forms.Panel();
-            this.pnlContainer = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlMemberContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlContainer = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlClient
             // 
+            this.pnlClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(208)))), ((int)(((byte)(44)))));
+            this.pnlClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClient.Controls.Add(this.pnlMemberContainer);
             this.pnlClient.Controls.Add(this.label1);
             this.pnlClient.Dock = System.Windows.Forms.DockStyle.Left;
@@ -47,6 +49,29 @@
             this.pnlClient.Size = new System.Drawing.Size(245, 442);
             this.pnlClient.TabIndex = 0;
             // 
+            // pnlMemberContainer
+            // 
+            this.pnlMemberContainer.AutoScroll = true;
+            this.pnlMemberContainer.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pnlMemberContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlMemberContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlMemberContainer.Location = new System.Drawing.Point(0, 60);
+            this.pnlMemberContainer.Name = "pnlMemberContainer";
+            this.pnlMemberContainer.Size = new System.Drawing.Size(243, 380);
+            this.pnlMemberContainer.TabIndex = 1;
+            this.pnlMemberContainer.WrapContents = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Hội viên đang hoạt động";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlContainer
             // 
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -54,29 +79,6 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(720, 442);
             this.pnlContainer.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hội viên đang hoạt động";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlMemberContainer
-            // 
-            this.pnlMemberContainer.AutoScroll = true;
-            this.pnlMemberContainer.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlMemberContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlMemberContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlMemberContainer.Location = new System.Drawing.Point(0, 56);
-            this.pnlMemberContainer.Name = "pnlMemberContainer";
-            this.pnlMemberContainer.Size = new System.Drawing.Size(245, 386);
-            this.pnlMemberContainer.TabIndex = 1;
-            this.pnlMemberContainer.WrapContents = false;
             // 
             // timer1
             // 

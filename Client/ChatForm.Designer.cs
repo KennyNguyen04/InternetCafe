@@ -87,6 +87,7 @@
             // ChatForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(542, 444);
             this.ControlBox = false;
             this.Controls.Add(this.lstChat);

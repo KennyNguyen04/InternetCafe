@@ -17,8 +17,8 @@ namespace Server
     {
         private LoginForm loginForm;
         private AdminForm adminForm;
-        Color blackGreenColor = Color.FromArgb(14, 60, 54);
-        Color themeColor = Color.FromArgb(14, 104, 54);
+        Color blackGreenColor = Color.FromArgb(153, 255, 102);
+        Color themeColor = Color.FromArgb(153, 255, 102);
         ServerManager serverManager;
         public AdminPageForm()
         {

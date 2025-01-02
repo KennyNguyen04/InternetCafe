@@ -58,14 +58,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 58);
+            this.panel1.Size = new System.Drawing.Size(1031, 58);
             this.panel1.TabIndex = 0;
             // 
             // lblClose
             // 
-            this.lblClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(104)))), ((int)(((byte)(54)))));
+            this.lblClose.BackColor = System.Drawing.Color.Gold;
             this.lblClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClose.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblClose.Location = new System.Drawing.Point(998, 0);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(31, 25);
@@ -76,13 +76,13 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(104)))), ((int)(((byte)(54)))));
+            this.label1.BackColor = System.Drawing.Color.Gold;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1028, 58);
+            this.label1.Size = new System.Drawing.Size(1031, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thực đơn";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +95,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 58);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(624, 546);
+            this.panel4.Size = new System.Drawing.Size(624, 552);
             this.panel4.TabIndex = 3;
             // 
             // pnlProductContainer
@@ -113,7 +113,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 29);
+            this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Phân loại";
             // 
@@ -123,7 +123,7 @@
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(140, 23);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(134, 37);
+            this.cbCategory.Size = new System.Drawing.Size(134, 33);
             this.cbCategory.TabIndex = 0;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -133,27 +133,27 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pnlCart);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(638, 58);
+            this.panel2.Location = new System.Drawing.Point(641, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 546);
+            this.panel2.Size = new System.Drawing.Size(390, 552);
             this.panel2.TabIndex = 4;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnOrder);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 487);
+            this.panel5.Location = new System.Drawing.Point(0, 493);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(390, 59);
             this.panel5.TabIndex = 2;
             // 
             // btnOrder
             // 
-            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(104)))), ((int)(((byte)(54)))));
+            this.btnOrder.BackColor = System.Drawing.Color.Gold;
             this.btnOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOrder.Location = new System.Drawing.Point(0, 0);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(390, 59);
@@ -206,7 +206,7 @@
             // MenuForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1028, 604);
+            this.ClientSize = new System.Drawing.Size(1031, 610);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
