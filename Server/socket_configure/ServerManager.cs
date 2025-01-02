@@ -60,6 +60,7 @@ namespace Server.socket_configure
             Thread OkeFine = new Thread(StartAceptClient);
             OkeFine.IsBackground = true;
             OkeFine.Start();
+
             
         }
         public void StartAceptClient()

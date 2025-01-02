@@ -142,6 +142,7 @@ insert into GroupClient values ('SVIP',N'Phòng vip',20000)
 insert into GroupClient values ('esport',N'Phòng máy dành cho giải đấu Game',100000)
 --May tram
 insert into Client values ('127.0.0.1','MAY1','basic','DISCONNECT')
+insert into Client values ('192.168.1.14','MAY0','basic','DISCONNECT')
 insert into Client values ('192.168.1.2','MAY2','basic','DISCONNECT')
 insert into Client values ('192.168.1.3','MAY3','basic','DISCONNECT')
 insert into Client values ('192.168.1.4','MAY4','basic','DISCONNECT')
