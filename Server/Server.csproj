@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6551F922-0E36-4514-AC6B-05800DA8C57D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CloudinaryDotNet, Version=1.26.2.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>..\packages\CloudinaryDotNet.1.26.2\lib\net452\CloudinaryDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ProcessAddMoney.cs" />
+    <Compile Include="BLL\ProcessBill.cs" />
+    <Compile Include="BLL\ProcessClient.cs" />
+    <Compile Include="BLL\ProcessGroupClient.cs" />
+    <Compile Include="BLL\ProcessMember.cs" />
+    <Compile Include="BLL\ProcessMessage.cs" />
+    <Compile Include="BLL\ProcessProduct.cs" />
+    <Compile Include="BLL\ProcessUser.cs" />
+    <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="DTO\AddMoneyTransaction.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\Bill_Item.cs" />
+    <Compile Include="DTO\Client.cs" />
+    <Compile Include="DTO\GroupClient.cs" />
+    <Compile Include="DTO\Message.cs" />
+    <Compile Include="DTO\Product.cs" />
+    <Compile Include="GUI\AddMoneyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AddMoneyControl.Designer.cs">
+      <DependentUpon>AddMoneyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddMoneyRequestItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AddMoneyRequestItem.Designer.cs">
+      <DependentUpon>AddMoneyRequestItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddMoney_ClientDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddMoney_ClientDetailForm.Designer.cs">
+      <DependentUpon>AddMoney_ClientDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BillDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BillDetailFrm.Designer.cs">
+      <DependentUpon>BillDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatClientItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatClientItem.Designer.cs">
+      <DependentUpon>ChatClientItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatControl.Designer.cs">
+      <DependentUpon>ChatControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClientDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientDetailForm.Designer.cs">
+      <DependentUpon>ClientDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClientHomePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientHomePageControl.Designer.cs">
+      <DependentUpon>ClientHomePageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClientHomePageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientHomePageUserControl.Designer.cs">
+      <DependentUpon>ClientHomePageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GroupClientCustom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GroupClientCustom.Designer.cs">
+      <DependentUpon>GroupClientCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GroupUser.cs" />
+    <Compile Include="DTO\InfoClient.cs" />
+    <Compile Include="DTO\Member.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="GUI\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminPageForm.Designer.cs">
+      <DependentUpon>AdminPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\HomePageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HomePageFrm.Designer.cs">
+      <DependentUpon>HomePageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClientAdminControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientAdminControl.Designer.cs">
+      <DependentUpon>ClientAdminControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DashBoardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DashBoardControl.Designer.cs">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MemberAdminControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\MemberAdminControl.Designer.cs">
+      <DependentUpon>MemberAdminControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MemberChatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\MemberChatControl.Designer.cs">
+      <DependentUpon>MemberChatControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MemberHomePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\MemberHomePageControl.Designer.cs">
+      <DependentUpon>MemberHomePageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuControl.Designer.cs">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductDetailForm.Designer.cs">
+      <DependentUpon>ProductDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RequestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\RequestControl.Designer.cs">
+      <DependentUpon>RequestControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RequestMenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\RequestMenuItem.Designer.cs">
+      <DependentUpon>RequestMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserAdminPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserAdminPageControl.Designer.cs">
+      <DependentUpon>UserAdminPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="socket_configure\ServerManager.cs" />
+    <EmbeddedResource Include="GUI\AddMoneyControl.resx">
+      <DependentUpon>AddMoneyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddMoneyRequestItem.resx">
+      <DependentUpon>AddMoneyRequestItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddMoney_ClientDetailForm.resx">
+      <DependentUpon>AddMoney_ClientDetailForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminPageForm.resx">
+      <DependentUpon>AdminPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BillDetailFrm.resx">
+      <DependentUpon>BillDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatClientItem.resx">
+      <DependentUpon>ChatClientItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatControl.resx">
+      <DependentUpon>ChatControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClientDetailForm.resx">
+      <DependentUpon>ClientDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClientHomePageControl.resx">
+      <DependentUpon>ClientHomePageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClientHomePageUserControl.resx">
+      <DependentUpon>ClientHomePageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GroupClientCustom.resx">
+      <DependentUpon>GroupClientCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HomePageFrm.resx">
+      <DependentUpon>HomePageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClientAdminControl.resx">
+      <DependentUpon>ClientAdminControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DashBoardControl.resx">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MemberAdminControl.resx">
+      <DependentUpon>MemberAdminControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MemberChatControl.resx">
+      <DependentUpon>MemberChatControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MemberHomePageControl.resx">
+      <DependentUpon>MemberHomePageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuControl.resx">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProductDetailForm.resx">
+      <DependentUpon>ProductDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RequestControl.resx">
+      <DependentUpon>RequestControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RequestMenuItem.resx">
+      <DependentUpon>RequestMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserAdminPageControl.resx">
+      <DependentUpon>UserAdminPageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\hide_pass_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\show_pass_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\business-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\home-page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\home-page %281%29.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
