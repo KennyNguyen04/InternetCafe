@@ -80,18 +80,21 @@ namespace Client
                 loadDataProduct(cbCategory.SelectedValue.ToString());
             }
         }
+
         private void loadCart()
         {
             pnlCart.Controls.Clear();
-            pnlCart.BringToFront();
-            foreach (Cart cart in listCart)
+            foreach (Cart cart in MenuForm.listCart)
             {
-                CartItem item = new CartItem();
-                item.Cart = cart;
+                CartItem item = new CartItem
+                {
+                    Cart = cart
+                };
                 pnlCart.Controls.Add(item);
-                
             }
         }
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (checkClick == 1)
@@ -107,25 +110,65 @@ namespace Client
             cartItem.Cart = cart;
             pnlCart.Controls.Add((cartItem));
         }
+
+        private bool CheckBalance(double itemPrice)
+        {
+            if (clientManager.totalMoney < itemPrice)
+            {
+                MessageBox.Show("Số tiền trong tài khoản không đủ để thanh toán món ăn này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
         private void btnOrder_Click(object sender, EventArgs e)
         {
             this.Close();
             foreach (CartItem item in pnlCart.Controls)
             {
-                foreach(Cart cart in listCart)
+                foreach (Cart cart in listCart)
                 {
-                    if(cart.Product.ProductID == item.Cart.Product.ProductID)
+                    if (cart.Product.ProductID == item.Cart.Product.ProductID)
                     {
                         cart.Quantity = item.getQuantity();
                     }
                 }
             }
+
+            // Tính tổng tiền của đơn hàng
+            double totalOrderAmount = listCart.Sum(cart => cart.Product.Price * cart.Quantity);
+            if (!CheckBalance(totalOrderAmount))
+            {
+                // Nếu không đủ tiền, hiển thị thông báo và thoát.
+                return;
+            }
+            // Gửi đơn hàng
             DateTime time = DateTime.Now;
             clientManager.sendOrder(time, orderToString(listCart));
+
+            // Cập nhật tổng tiền trong ClientForm
+            clientForm.UpdateTotalMoney(totalOrderAmount);
+
             BillForm billForm = new BillForm(clientManager, time);
             billForm.Show();
-            
         }
+
+
+        public void UpdateCartTotal()
+        {
+            double totalAmount = 0;
+
+            foreach (Cart cart in listCart)
+            {
+                totalAmount += cart.Product.Price * cart.Quantity;
+            }
+
+            // Cập nhật label hiển thị tổng tiền, giả sử bạn có label tên lblTotalAmount
+            //lblTotalAmount.Text = totalAmount.ToString("C"); // Hiển thị định dạng tiền tệ
+        }
+
+
+
         private string orderToString(List<Cart> carts)
         {
             string str = "";
@@ -138,10 +181,16 @@ namespace Client
 
         private void pnlCart_Paint(object sender, PaintEventArgs e)
         {
+
         }
 
         private void pnlCart_ControlAdded(object sender, ControlEventArgs e)
         {
+        }
+
+        private void pnlProductContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

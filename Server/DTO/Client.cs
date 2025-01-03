@@ -38,5 +38,9 @@ namespace Server.DTO
             get { return note; }
             set { note = value; }
         }
+
+        internal class MenuForm
+        {
+        }
     }
 }
