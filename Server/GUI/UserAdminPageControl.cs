@@ -132,5 +132,10 @@ namespace Server.GUI
             pcUser.deleteUser(user);
             UserAdminPageControl_Load(sender,e);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

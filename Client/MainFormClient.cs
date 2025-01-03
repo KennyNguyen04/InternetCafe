@@ -372,9 +372,6 @@ namespace Client
 
         }
 
-        private void txtUseTimeFee_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

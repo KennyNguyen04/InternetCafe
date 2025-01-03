@@ -52,30 +52,36 @@
             this.lblMember = new System.Windows.Forms.Label();
             this.pnlUserCtr = new System.Windows.Forms.Panel();
             this.controlContainer = new System.Windows.Forms.Panel();
+            this.dashBoardControl1 = new Server.GUI.DashBoardControl();
             this.clientAdminControl1 = new Server.GUI.ClientAdminControl();
             this.memberControl = new Server.GUI.MemberAdminControl();
             this.userAdminPageControl1 = new Server.GUI.UserAdminPageControl();
-            this.dashBoardControl1 = new Server.GUI.DashBoardControl();
             this.menuControl1 = new Server.GUI.MenuControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMenu)).BeginInit();
+            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClient)).BeginInit();
+            this.pnlClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMainPage)).BeginInit();
+            this.pnlMainPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUserCtr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMember.SuspendLayout();
+            this.pnlUserCtr.SuspendLayout();
             this.controlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(70)))), ((int)(((byte)(54)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(208)))), ((int)(((byte)(44)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblBack);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1078, 78);
@@ -85,12 +91,13 @@
             // 
             this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBack.AutoSize = true;
+            this.lblBack.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblBack.Location = new System.Drawing.Point(29, 9);
+            this.lblBack.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblBack.Location = new System.Drawing.Point(27, 9);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(58, 54);
+            this.lblBack.Size = new System.Drawing.Size(46, 44);
             this.lblBack.TabIndex = 3;
             this.lblBack.Text = "◀";
             this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
@@ -102,9 +109,9 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Location = new System.Drawing.Point(1045, 9);
+            this.btnClose.Location = new System.Drawing.Point(1043, 9);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 31);
+            this.btnClose.Size = new System.Drawing.Size(27, 25);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -113,30 +120,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(422, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 45);
+            this.label1.Size = new System.Drawing.Size(273, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý phòng net";
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(104)))), ((int)(((byte)(54)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(208)))), ((int)(((byte)(44)))));
             this.panel2.Controls.Add(this.ptbMenu);
-            this.panel2.Controls.Add(this.lblMenu);
             this.panel2.Controls.Add(this.pnlMenu);
             this.panel2.Controls.Add(this.ptbClient);
-            this.panel2.Controls.Add(this.lblClientPage);
             this.panel2.Controls.Add(this.pnlClient);
             this.panel2.Controls.Add(this.ptbMainPage);
-            this.panel2.Controls.Add(this.lblMainPage);
             this.panel2.Controls.Add(this.pnlMainPage);
             this.panel2.Controls.Add(this.ptbUserCtr);
             this.panel2.Controls.Add(this.ptbMember);
             this.panel2.Controls.Add(this.btnLogout);
-            this.panel2.Controls.Add(this.lblUserCtr);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.pnlMember);
             this.panel2.Controls.Add(this.pnlUserCtr);
@@ -162,16 +165,18 @@
             this.lblMenu.BackColor = System.Drawing.Color.Transparent;
             this.lblMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMenu.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.ForeColor = System.Drawing.Color.White;
-            this.lblMenu.Location = new System.Drawing.Point(55, 310);
+            this.lblMenu.ForeColor = System.Drawing.Color.Black;
+            this.lblMenu.Location = new System.Drawing.Point(81, 15);
             this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(206, 31);
+            this.lblMenu.Size = new System.Drawing.Size(153, 23);
             this.lblMenu.TabIndex = 27;
             this.lblMenu.Text = "Quản lý thực đơn";
             this.lblMenu.Click += new System.EventHandler(this.lblMenu_Click);
             // 
             // pnlMenu
             // 
+            this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMenu.Controls.Add(this.lblMenu);
             this.pnlMenu.Location = new System.Drawing.Point(0, 297);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(268, 51);
@@ -179,7 +184,7 @@
             // 
             // ptbClient
             // 
-            this.ptbClient.Image = global::Server.Properties.Resources.computer;
+            this.ptbClient.Image = ((System.Drawing.Image)(resources.GetObject("ptbClient.Image")));
             this.ptbClient.Location = new System.Drawing.Point(12, 204);
             this.ptbClient.Name = "ptbClient";
             this.ptbClient.Size = new System.Drawing.Size(30, 30);
@@ -193,16 +198,18 @@
             this.lblClientPage.BackColor = System.Drawing.Color.Transparent;
             this.lblClientPage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblClientPage.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientPage.ForeColor = System.Drawing.Color.White;
-            this.lblClientPage.Location = new System.Drawing.Point(55, 204);
+            this.lblClientPage.ForeColor = System.Drawing.Color.Black;
+            this.lblClientPage.Location = new System.Drawing.Point(84, 15);
             this.lblClientPage.Name = "lblClientPage";
-            this.lblClientPage.Size = new System.Drawing.Size(153, 31);
+            this.lblClientPage.Size = new System.Drawing.Size(114, 23);
             this.lblClientPage.TabIndex = 24;
             this.lblClientPage.Text = "Quản lý máy";
             this.lblClientPage.Click += new System.EventHandler(this.lblClientPage_Click);
             // 
             // pnlClient
             // 
+            this.pnlClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlClient.Controls.Add(this.lblClientPage);
             this.pnlClient.Location = new System.Drawing.Point(3, 195);
             this.pnlClient.Name = "pnlClient";
             this.pnlClient.Size = new System.Drawing.Size(265, 51);
@@ -224,16 +231,19 @@
             this.lblMainPage.BackColor = System.Drawing.Color.Transparent;
             this.lblMainPage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMainPage.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainPage.ForeColor = System.Drawing.Color.White;
-            this.lblMainPage.Location = new System.Drawing.Point(53, 155);
+            this.lblMainPage.ForeColor = System.Drawing.Color.Black;
+            this.lblMainPage.Location = new System.Drawing.Point(86, 16);
             this.lblMainPage.Name = "lblMainPage";
-            this.lblMainPage.Size = new System.Drawing.Size(174, 31);
+            this.lblMainPage.Size = new System.Drawing.Size(130, 23);
             this.lblMainPage.TabIndex = 22;
             this.lblMainPage.Text = "Quản lý chung";
             this.lblMainPage.Click += new System.EventHandler(this.lblMainPage_Click);
             // 
             // pnlMainPage
             // 
+            this.pnlMainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(208)))), ((int)(((byte)(44)))));
+            this.pnlMainPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMainPage.Controls.Add(this.lblMainPage);
             this.pnlMainPage.Location = new System.Drawing.Point(1, 144);
             this.pnlMainPage.Name = "pnlMainPage";
             this.pnlMainPage.Size = new System.Drawing.Size(267, 51);
@@ -241,7 +251,7 @@
             // 
             // ptbUserCtr
             // 
-            this.ptbUserCtr.Image = global::Server.Properties.Resources.bill;
+            this.ptbUserCtr.Image = ((System.Drawing.Image)(resources.GetObject("ptbUserCtr.Image")));
             this.ptbUserCtr.Location = new System.Drawing.Point(12, 356);
             this.ptbUserCtr.Name = "ptbUserCtr";
             this.ptbUserCtr.Size = new System.Drawing.Size(30, 30);
@@ -261,11 +271,11 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(104)))), ((int)(((byte)(54)))));
+            this.btnLogout.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLogout.Location = new System.Drawing.Point(66, 415);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogout.Location = new System.Drawing.Point(61, 481);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(136, 40);
             this.btnLogout.TabIndex = 11;
@@ -279,10 +289,10 @@
             this.lblUserCtr.BackColor = System.Drawing.Color.Transparent;
             this.lblUserCtr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUserCtr.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserCtr.ForeColor = System.Drawing.Color.White;
-            this.lblUserCtr.Location = new System.Drawing.Point(56, 360);
+            this.lblUserCtr.ForeColor = System.Drawing.Color.Black;
+            this.lblUserCtr.Location = new System.Drawing.Point(81, 9);
             this.lblUserCtr.Name = "lblUserCtr";
-            this.lblUserCtr.Size = new System.Drawing.Size(214, 31);
+            this.lblUserCtr.Size = new System.Drawing.Size(159, 23);
             this.lblUserCtr.TabIndex = 8;
             this.lblUserCtr.Text = "Quản lý nhân viên";
             this.lblUserCtr.Click += new System.EventHandler(this.lblPayment_Click);
@@ -299,6 +309,7 @@
             // 
             // pnlMember
             // 
+            this.pnlMember.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMember.Controls.Add(this.lblMember);
             this.pnlMember.Location = new System.Drawing.Point(0, 246);
             this.pnlMember.Name = "pnlMember";
@@ -311,16 +322,18 @@
             this.lblMember.BackColor = System.Drawing.Color.Transparent;
             this.lblMember.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMember.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMember.ForeColor = System.Drawing.Color.White;
-            this.lblMember.Location = new System.Drawing.Point(55, 10);
+            this.lblMember.ForeColor = System.Drawing.Color.Black;
+            this.lblMember.Location = new System.Drawing.Point(87, 16);
             this.lblMember.Name = "lblMember";
-            this.lblMember.Size = new System.Drawing.Size(195, 31);
+            this.lblMember.Size = new System.Drawing.Size(147, 23);
             this.lblMember.TabIndex = 3;
             this.lblMember.Text = "Quản lý hội viên";
             this.lblMember.Click += new System.EventHandler(this.lblMember_Click);
             // 
             // pnlUserCtr
             // 
+            this.pnlUserCtr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlUserCtr.Controls.Add(this.lblUserCtr);
             this.pnlUserCtr.Location = new System.Drawing.Point(0, 346);
             this.pnlUserCtr.Name = "pnlUserCtr";
             this.pnlUserCtr.Size = new System.Drawing.Size(268, 51);
@@ -339,6 +352,16 @@
             this.controlContainer.Size = new System.Drawing.Size(810, 561);
             this.controlContainer.TabIndex = 3;
             this.controlContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.controlContainer_Paint);
+            // 
+            // dashBoardControl1
+            // 
+            this.dashBoardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashBoardControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashBoardControl1.Location = new System.Drawing.Point(0, 0);
+            this.dashBoardControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dashBoardControl1.Name = "dashBoardControl1";
+            this.dashBoardControl1.Size = new System.Drawing.Size(810, 561);
+            this.dashBoardControl1.TabIndex = 7;
             // 
             // clientAdminControl1
             // 
@@ -367,16 +390,6 @@
             this.userAdminPageControl1.Size = new System.Drawing.Size(810, 561);
             this.userAdminPageControl1.TabIndex = 5;
             // 
-            // dashBoardControl1
-            // 
-            this.dashBoardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashBoardControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashBoardControl1.Location = new System.Drawing.Point(0, 0);
-            this.dashBoardControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dashBoardControl1.Name = "dashBoardControl1";
-            this.dashBoardControl1.Size = new System.Drawing.Size(810, 561);
-            this.dashBoardControl1.TabIndex = 7;
-            // 
             // menuControl1
             // 
             this.menuControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -403,15 +416,22 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMenu)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClient)).EndInit();
+            this.pnlClient.ResumeLayout(false);
+            this.pnlClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMainPage)).EndInit();
+            this.pnlMainPage.ResumeLayout(false);
+            this.pnlMainPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUserCtr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMember.ResumeLayout(false);
             this.pnlMember.PerformLayout();
+            this.pnlUserCtr.ResumeLayout(false);
+            this.pnlUserCtr.PerformLayout();
             this.controlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 

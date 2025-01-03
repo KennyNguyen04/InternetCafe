@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lblBillID = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lblMemberName = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -52,36 +52,6 @@
             this.panel1.Size = new System.Drawing.Size(115, 54);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.lblMemberName);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(115, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 54);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.Controls.Add(this.lblTime);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(265, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(161, 54);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel4.Controls.Add(this.lblTotalPrice);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(426, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(159, 54);
-            this.panel4.TabIndex = 3;
-            // 
             // lblBillID
             // 
             this.lblBillID.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -92,6 +62,16 @@
             this.lblBillID.Text = "BillID";
             this.lblBillID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblBillID.Click += new System.EventHandler(this.lblBillID_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.lblMemberName);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(115, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(150, 54);
+            this.panel2.TabIndex = 1;
             // 
             // lblMemberName
             // 
@@ -104,6 +84,16 @@
             this.lblMemberName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMemberName.Click += new System.EventHandler(this.lblBillID_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.Controls.Add(this.lblTime);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(265, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(161, 54);
+            this.panel3.TabIndex = 2;
+            // 
             // lblTime
             // 
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,6 +104,16 @@
             this.lblTime.Text = "00:00:00";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTime.Click += new System.EventHandler(this.lblBillID_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.Controls.Add(this.lblTotalPrice);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(426, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(159, 54);
+            this.panel4.TabIndex = 3;
             // 
             // lblTotalPrice
             // 

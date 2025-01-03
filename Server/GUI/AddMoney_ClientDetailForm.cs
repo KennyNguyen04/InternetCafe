@@ -64,5 +64,10 @@ namespace Server.GUI
         {
             this.Close();
         }
+
+        private void txtMoney_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
