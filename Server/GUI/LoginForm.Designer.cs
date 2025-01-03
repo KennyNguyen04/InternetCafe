@@ -80,7 +80,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(529, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(21, 20);
+            this.btnClose.Size = new System.Drawing.Size(31, 29);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -92,7 +92,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(216, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 24);
+            this.label1.Size = new System.Drawing.Size(356, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "ĐĂNG NHẬP TÀI KHOẢN";
             // 
@@ -103,7 +103,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(216, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(119, 29);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tài khoản";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -115,7 +115,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(216, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(109, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "Mật khẩu";
             // 
@@ -124,7 +124,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 6;
             // 
             // pictureBox2

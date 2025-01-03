@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Server.GUI
+namespace Server.GUI 
 {
     public partial class BillDetailFrm : Form
     {
@@ -21,6 +21,7 @@ namespace Server.GUI
         ProcessMember ProcessMember = new ProcessMember();
         ProcessProduct ProcessProduct = new ProcessProduct();
         ProcessBill ProcessBill = new ProcessBill();
+
         public BillDetailFrm(Bill bill)
         {
             InitializeComponent();
@@ -97,7 +98,7 @@ namespace Server.GUI
             foreach(Bill_Item item in items) {
                 ProcessProduct.updateProductInventory(item.ProductID, item.Quantity);
             }
-            
+
         }
 
         private void btnDeny_Click(object sender, EventArgs e)

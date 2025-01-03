@@ -32,10 +32,16 @@ namespace Client
 
         private void ptbDelete_Click(object sender, EventArgs e)
         {
+            // Xóa sản phẩm khỏi danh sách giỏ hàng
             MenuForm.listCart.Remove(cart);
             MenuForm.listId.Remove(cart.Product.ProductID);
-            MenuForm.checkClick = 1;
+
+            // Xóa control khỏi giao diện
+            this.Parent.Controls.Remove(this);
+
+          
         }
+
         public int getQuantity()
         {
             return int.Parse(nudQuantity.Text);

@@ -46,6 +46,36 @@ namespace Client
             chatForm = new ChatForm(this, clientManager);
 
         }
+
+        private bool CheckBalance(double itemPrice)
+        {
+            if (clientManager.totalMoney < itemPrice)
+            {
+                MessageBox.Show("Số tiền trong tài khoản không đủ để thanh toán món ăn này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private void ConfirmOrder(double itemPrice)
+        {
+            // Kiểm tra số dư
+            if (!CheckBalance(itemPrice))
+            {
+                return; // Thoát nếu số dư không đủ
+            }
+
+            // Trừ tiền vào tổng tiền
+            clientManager.totalMoney -= itemPrice;
+            txtCurrentMoney.Text = currencyFormat(clientManager.totalMoney);
+
+            // Lưu thông tin vào cơ sở dữ liệu
+            clientManager.updateMoney(userName, clientManager.totalMoney, TimeSpan.Parse(txtUsedTime.Text));
+
+            MessageBox.Show("Thanh toán thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
         public ClientForm(ClientManager x)
         {
             this.clientManager = x;
@@ -69,6 +99,7 @@ namespace Client
 
         private void timerProgram_Tick(object sender, EventArgs e)
         {
+            Console.WriteLine($"Timer Tick: Thời gian sử dụng {txtUsedTime.Text}, Chi phí giờ chơi {txtUseTimeFee.Text}");
             try
             {
                 if(checkOrderStatus == 1)
@@ -82,7 +113,12 @@ namespace Client
                 }
                 if (ClientManager.requestServer != -1)
                 {
-                    
+                    // Logic xử lý yêu cầu từ server và tính phí giờ chơi
+                    if (ClientManager.requestServer != -1)
+                    {
+                        TimeCount(); // Cập nhật thời gian và chi phí
+                    }
+
                     if (ClientManager.requestServer == MEMBERLOGIN)
                     {
                         this.Enabled = true;
@@ -139,8 +175,12 @@ namespace Client
                         clientManager.LogoutMember(userName);
                         
                     }
+
+
                 }
-            }catch{
+            }catch(Exception ex)
+            {
+                Console.WriteLine($"Lỗi trong timerProgram_Tick: {ex.Message}");
                 Application.Exit();
             }
         }
@@ -154,17 +194,49 @@ namespace Client
 
         private void MoneyCount(string useTime)
         {
-            // Chuyển đổi thời gian sử dụng sang phút
-            TimeSpan timeUsed = TimeSpan.ParseExact(useTime, @"hh\:mm", CultureInfo.InvariantCulture);
-            double minutesUsed = timeUsed.TotalMinutes;
+            try
+            {
+                Console.WriteLine($"Bắt đầu tính phí cho thời gian: {useTime}");
 
-            // Tính phí sử dụng dựa trên số phút đã sử dụng
-            money = (clientManager.clientPrice / 60) * minutesUsed;
+                // Kiểm tra định dạng thời gian
+                if (!TimeSpan.TryParseExact(useTime, @"hh\:mm", CultureInfo.InvariantCulture, out TimeSpan timeUsed))
+                {
+                    Console.WriteLine("Thời gian không hợp lệ.");
+                    return;
+                }
 
-            // Cập nhật giá trị vào giao diện người dùng
-            txtUseTimeFee.Text = currencyFormat(money);
+                // Tính số phút đã sử dụng
+                double minutesUsed = Math.Ceiling(timeUsed.TotalMinutes);
+                Console.WriteLine($"Số phút đã sử dụng (làm tròn): {minutesUsed}");
+
+                if (minutesUsed >= 1)
+                {
+                    // Tính chi phí dựa trên số phút
+                    money = (clientManager.clientPrice / 60) * minutesUsed;
+
+                    // Cập nhật giao diện trong luồng chính
+                    if (InvokeRequired)
+                    {
+                        this.Invoke(new Action(() => txtUseTimeFee.Text = currencyFormat(money)));
+                    }
+                    else
+                    {
+                        txtUseTimeFee.Text = currencyFormat(money);
+                    }
+
+                    txtUseTimeFee.Refresh();
+                    Console.WriteLine($"Chi phí giờ chơi được cập nhật: {money}");
+                }
+                else
+                {
+                    txtUseTimeFee.Text = "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi trong MoneyCount: {ex.Message}");
+            }
         }
-
 
         private int ChangeUseTimeToMinutes(string useTime)
         {
@@ -174,32 +246,42 @@ namespace Client
 
         private void TimeCount()
         {
-            // Cập nhật giao diện hiển thị thời gian
-            txtUsedTime.Text = hour.ToString("D2") + ":" + min.ToString("D2");
-
             sec++;
-
             if (sec > 59)
             {
                 min++;
                 sec = 0;
+                MoneyCount($"{hour:D2}:{min:D2}"); // Gọi MoneyCount khi tăng phút
             }
-
             if (min > 59)
             {
                 hour++;
                 min = 0;
             }
 
-            if (hour > 99)
-            {
-                timerProgram.Stop();
-                timerProgram.Enabled = true;
-            }
+            // Cập nhật thời gian hiển thị
+            txtUsedTime.Text = $"{hour:D2}:{min:D2}";
+            Console.WriteLine($"Thời gian hiện tại: {txtUsedTime.Text}");
 
-            // Tính chi phí sau mỗi giây, phút, giờ
-            MoneyCount(txtUsedTime.Text.ToString());
+            // Gọi MoneyCount khi thời gian sử dụng đạt ít nhất một phút
+            if (hour > 0 || min > 0)
+            {
+                MoneyCount($"{hour:D2}:{min:D2}");
+            }
         }
+
+        public void UpdateTotalMoney(double orderAmount)
+        {
+            // Trừ tiền từ tổng số tiền
+            clientManager.totalMoney -= orderAmount;
+
+            // Cập nhật textbox
+            txtCurrentMoney.Text = currencyFormat(clientManager.totalMoney);
+
+            // Lưu thông tin vào cơ sở dữ liệu (nếu cần)
+            clientManager.updateMoney(userName, clientManager.totalMoney, TimeSpan.Parse(txtUsedTime.Text));
+        }
+
 
 
         private void pnlLogout_Click(object sender, EventArgs e)
@@ -230,11 +312,17 @@ namespace Client
 
         private string currencyFormat(double money)
         {
-            double roundedMoney = RoundToThousand(money);
-            return string.Format(new CultureInfo("en-US"), "{0:N0}", roundedMoney); // Định dạng với dấu phân cách hàng nghìn
+            try
+            {
+                // Không làm tròn để kiểm tra giá trị
+                return string.Format(new CultureInfo("en-US"), "{0:N0}", money);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi trong currencyFormat: {ex.Message}");
+                return money.ToString("F2");
+            }
         }
-
-
 
 
         private void chat_Click(object sender, EventArgs e)
@@ -280,6 +368,11 @@ namespace Client
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUseTimeFee_TextChanged(object sender, EventArgs e)
         {
 
         }
