@@ -194,6 +194,16 @@ namespace Client
                 
             }
         }
+
+        public bool CheckBalance(double itemPrice)
+        {
+            if (totalMoney < itemPrice)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public void Login(string userName, string passWord)
         {
             client.Send(ConvertToByte("AllowToLogInPls!!|" + userName + "|" + passWord + "|"));
