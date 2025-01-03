@@ -97,7 +97,6 @@
 
             this.txtUseTimeFee.Size = new System.Drawing.Size(199, 30);
             this.txtUseTimeFee.TabIndex = 7;
-            this.txtUseTimeFee.TextChanged += new System.EventHandler(this.txtUseTimeFee_TextChanged);
             // 
             // label5
             // 
@@ -202,7 +201,6 @@
 
             this.label4.TabIndex = 6;
             this.label4.Text = "TRANG CHỦ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 

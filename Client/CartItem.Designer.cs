@@ -71,6 +71,7 @@
             // 
             // ptbDelete
             // 
+            this.ptbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbDelete.Image = ((System.Drawing.Image)(resources.GetObject("ptbDelete.Image")));
             this.ptbDelete.Location = new System.Drawing.Point(15, 14);
             this.ptbDelete.Name = "ptbDelete";
